@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         {/* Header */}
         <Header />
 

@@ -54,12 +54,12 @@ export default function Header() {
               >
                 GIỚI THIỆU
               </Link>
-              <Link
+              {/* <Link
                 href="/san-pham"
                 className="text-gray-700 hover:text-primary transition-colors"
               >
                 SẢN PHẨM
-              </Link>
+              </Link> */}
               <Link
                 href="/dich-vu"
                 className="text-gray-700 hover:text-primary transition-colors"
@@ -91,7 +91,7 @@ export default function Header() {
               href="/san-pham"
               className="hidden lg:block bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors text-sm"
             >
-              ĐẶT HÀNG
+              SẢN PHẨM
             </Link>
 
             {/* Mobile Menu Button */}

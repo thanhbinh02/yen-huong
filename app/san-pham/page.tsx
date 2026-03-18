@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Sản phẩm - YẾN HƯƠNG",
@@ -12,19 +13,19 @@ export default function SanPhamPage() {
       slug: "keo-chuoi",
       name: "KẸO CHUỐI",
       description: "Đặc sản kẹo chuối Yến Hương - Sản phẩm độc quyền",
-      image: "🍌",
+      image: "/products/keo-chuoi/keo-chuoi-tuoi.jpg",
     },
     {
       slug: "keo-dua",
       name: "KẸO DỪA",
       description: "Kẹo dừa Bến Tre truyền thống - Hơn 30 năm uy tín",
-      image: "🥥",
+      image: "/products/keo-dua/keo-dua-sua-dua.jpg",
     },
     {
       slug: "banh-phong-sua",
       name: "BÁNH PHỒNG SỮA",
       description: "Bánh phồng sữa thơm ngon, giòn tan",
-      image: "🥛",
+      image: "/products/banh-phong-sua/banh-phong-sua-la-dua.jpg",
     },
   ];
 
@@ -74,11 +75,19 @@ export default function SanPhamPage() {
               href={`/san-pham/${category.slug}`}
               className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              <div className="text-center p-8 bg-linear-to-br from-primary-light to-primary">
-                <div className="text-8xl mb-4">{category.image}</div>
-                <h2 className="text-3xl font-bold text-white mb-2">
-                  {category.name}
-                </h2>
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-primary/90 via-primary/50 to-transparent flex items-end justify-center pb-8">
+                  <h2 className="text-3xl font-bold text-white">
+                    {category.name}
+                  </h2>
+                </div>
               </div>
 
               <div className="p-6">
